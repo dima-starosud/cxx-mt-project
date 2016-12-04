@@ -70,7 +70,7 @@ int main()
     tokens_count++;
 
     int output;
-    R1(output = open("/home/dima/result.out", O_RDWR | O_CREAT | O_TRUNC));
+    R1(output = open("/home/dima/result.out", O_RDWR | O_CREAT | O_TRUNC, S_IRWXU | S_IRWXG | S_IRWXO));
     R0(close(STDOUT_FILENO));
     R1(dup2(output, STDOUT_FILENO));
     R0(close(output));
