@@ -1,7 +1,7 @@
-all: shell
+TARGET=/home/box/shell
 
-shell: shell.c
-	gcc -o shell -std=c11 shell.c
+all: $(TARGET).c
+	gcc -o $(TARGET) -std=c11 $(TARGET).c
 
 clean:
-	rm -f shell
+	rm -f $(TARGET)
