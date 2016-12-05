@@ -66,11 +66,11 @@ int main()
     size_t tokens_count = 0;
     while ((token = strsep(&line, " \n\r")) != NULL)
         if (*token)
-            tokens[tokens_count++] = (strcmp(token, "|") != 0) ? token : NULL;
+            tokens[tokens_count++] = strcmp(token, "|") != 0 ? token : NULL;
     tokens_count++;
 
     int output;
-    R1(output = open("/home/dima/result.out", O_RDWR | O_CREAT | O_TRUNC, S_IRWXU | S_IRWXG | S_IRWXO));
+    R1(output = open("/home/box/result.out", O_RDWR | O_CREAT | O_TRUNC, S_IRWXU | S_IRWXG | S_IRWXO));
     R0(close(STDOUT_FILENO));
     R1(dup2(output, STDOUT_FILENO));
     R0(close(output));
