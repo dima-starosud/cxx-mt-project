@@ -1,4 +1,4 @@
 *.o
 .idea
 bin/
-shell
+mtexe
