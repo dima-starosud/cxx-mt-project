@@ -16,6 +16,6 @@ int main()
     R0(socketpair(AF_LOCAL, SOCK_STREAM, 0, ss));
     pid_t child_pid;
     R1(child_pid = fork());
-    R0(close(!child_pid));
+    R0(close(ss[!child_pid]));
     while (true);
 }
